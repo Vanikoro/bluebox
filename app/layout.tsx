@@ -13,8 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bluebox - Gestión de Residuos Corporativos",
-  description: "En Bluebox ayudamos a las empresas a optimizar su cadena de reciclaje con recolección eficiente y certificados de disposición final.",
+  title: "Bluebox SAS ESP | Gestión de Residuos en Bogotá",
+  description: "Líderes en recolección y gestión de residuos aprovechables en Bogotá. Cumplimos con el Decreto 596 de 2016. Certificamos la disposición final de sus materiales.",
+  keywords: "gestión de residuos Bogotá, Bluebox reciclaje, Decreto 596 de 2016, recolección de residuos aprovechables, certificados de disposición final, empresa de servicios públicos ESP",
+  openGraph: {
+    title: "Bluebox SAS ESP | Gestión Ambiental Corporativa",
+    description: "Transformamos sus residuos en responsabilidad ambiental.",
+    type: "website",
+    locale: "es_CO",
+    url: "https://www.blueboxreciclajes.com",
+    siteName: "Bluebox SAS ESP",
+  },
 };
 
 export default function RootLayout({
@@ -24,8 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="es" 
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
