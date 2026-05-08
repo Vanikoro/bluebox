@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     locale: "es_CO",
     url: "https://www.blueboxreciclajes.com",
     siteName: "Bluebox SAS ESP",
+    images: [
+      {
+        url: "https://www.blueboxreciclajes.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bluebox SAS ESP - Gestión de Residuos en Bogotá",
+      },
+    ],
   },
 };
 
@@ -36,7 +44,34 @@ export default function RootLayout({
       lang="es" 
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">{children}
+       <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BlueBox SAS ESP",
+      "image": "https://www.blueboxreciclajes.com/logo.png", 
+      "description": "Empresa prestadora de servicios públicos enfocada en la recolección, transporte y gestión de residuos aprovechables en Bogotá.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressCountry": "CO"
+        // Si tienes la dirección exacta de la bodega/oficina, agrégala aquí en "streetAddress"
+      },
+      "telephone": "+573136188704",
+      "email": "admon.bluebox@gmail.com",
+      "url": "https://www.blueboxreciclajes.com",
+      "openingHours": "Mo-Fr 08:00-17:00", 
+      "sameAs": [
+        "https://www.facebook.com/tu-usuario", 
+        "https://www.instagram.com/tu-usuario"
+      ]
+    }),
+  }}
+/>
+      </body>
     </html>
   );
 }
